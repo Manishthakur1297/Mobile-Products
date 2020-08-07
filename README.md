@@ -1,6 +1,6 @@
 # Mobile Products Ecommerce
 
-HEROKU URL(Live DEMO) : https://.herokuapp.com/
+HEROKU URL(Live DEMO) : https://mobile-phone-commerce.herokuapp.com/
 
 ## Run Server(Express.js)
 
