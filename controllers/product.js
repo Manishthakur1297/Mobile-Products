@@ -1,13 +1,36 @@
 const Product = require("../models/product");
+const axios = require("axios");
 
 exports.importData = async (req, res) => {
   try {
     let data = require("../products.json").products;
 
+    await Product.deleteMany({});
+
     for (key in data) {
       let product = new Product(data[key]);
       await product.save();
     }
+    return res.send({ msg: "Fetching, Storing Done" });
+  } catch (error) {
+    console.log(error.message);
+    process.exit(1);
+  }
+};
+
+exports.fetchData = async (req, res) => {
+  try {
+    let response = await axios.get(
+      `https://mindler-dashboard.s3.us-east-2.amazonaws.com/products.json`
+    );
+    // console.log("fetched");
+    await Product.deleteMany({});
+    // console.log("Deleted");
+    for (key in response.data.products) {
+      let product = new Product(response.data.products[key]);
+      await product.save();
+    }
+    return res.send({ msg: "Fetching, Storing Done" });
   } catch (error) {
     console.log(error.message);
     process.exit(1);

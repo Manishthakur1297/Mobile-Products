@@ -5,7 +5,6 @@ export const getProducts = (skip, limit, title) => {
     title,
   };
   return fetch(`/api/products/by/search`, {
-    // return fetch(`http://localhost:5000/api/products/by/search`, {
     method: "POST",
     headers: {
       Accept: "application/json",

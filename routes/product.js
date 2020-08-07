@@ -6,6 +6,7 @@ const {
   importData,
   listBySearch,
   create,
+  fetchData,
 } = require("../controllers/product");
 
 // @route       GET api/products
@@ -25,6 +26,12 @@ router.post("/products", create);
 // @access      Public
 
 router.get("/products/import", importData);
+
+// @route       GET api/products/fetch
+// @desc        Upload Data to DB
+// @access      Public
+
+router.get("/products/fetch", fetchData);
 
 // @route       POST api/products/by/search
 // @desc        Search PRODUCTS
