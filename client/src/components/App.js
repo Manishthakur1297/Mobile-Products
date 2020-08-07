@@ -16,7 +16,7 @@ const App = () => {
 
   const loadProducts = (skip, limit, title) => {
     getProducts(skip, limit, title).then((data) => {
-      console.log(data);
+      // console.log(data);
       if (data.error) {
         setError(data.error);
       } else {
