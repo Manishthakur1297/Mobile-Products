@@ -15,9 +15,7 @@ const Card = ({ product }) => {
           <div className="price">${product.price}</div>
         </div>
         <hr />
-        <p className="card__description">Popularity - {product.popularity}</p>
-        <hr />
-        <br />
+        <p className="card__description">🔥 {product.popularity}</p>
       </div>
     </div>
   );
